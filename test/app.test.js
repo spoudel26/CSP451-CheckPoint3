@@ -11,7 +11,7 @@ describe("GET /", () => {
 
 describe("GET /health", () => {
   test("returns status 200 and healthy status", async () => {
-    const res = await request(app).get("/health");
+    const      res = await request(app).get("/health");
     expect(res.statusCode).toBe(200);
     expect(res.body.status).toBe("healthy");
   });
