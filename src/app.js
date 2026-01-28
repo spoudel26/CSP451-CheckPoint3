@@ -5,14 +5,14 @@ app.get("/", (req, res) => {
   res.json({ status: "ok", message: "Hello from CSP451" });
 });
 
-// BROKEN /health endpoint — missing closing parenthesis
+// BROKEN /health endpoint
 app.get("/health", (req, res) => {
-  res.status(200).json({ status: "healthy", uptime: process.uptime() }  // <- missing )
-});
+  res.status(200).json({ status: "healthy", uptime: process.uptime() }); // remove closing brace to break
+// MISSING CLOSING BRACE AND PARENTHESIS
 
-module.exports = app;
+module.exports     = app;
 
-if (require.main === module) {
-  const port = process.env.PORT || 3000;
-  app.listen(port, () => console.log(`Listening on ${port}`));
+if (require.mai   n === module) {
+  const port      = process.env.PORT || 3000;
+  app       .listen(port, () => console.log(`Listening on ${port}`));
 }
