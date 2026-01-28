@@ -8,9 +8,9 @@ app.get("/", (req, res) => {
 
 // Health endpoint
 app.get("/health", (req, res) => {
-  res.status(200).json({ 
-    status: "healthy", 
-    uptime: process.uptime() 
+  res.status(200).json({
+    status: "healthy",
+    uptime: process.uptime(),
   });
 });
 
@@ -21,6 +21,3 @@ if (require.main === module) {
   const port = process.env.PORT || 3000;
   app.listen(port, () => console.log(`Listening on ${port}`));
 }
-
-
-
