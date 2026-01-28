@@ -5,9 +5,9 @@ app.get("/", (req, res) => {
   res.json({ status: "ok", message: "Hello from CSP451" });
 });
 
-// BROKEN /health endpoint
+// BROKEN /health endpoint — missing closing parenthesis
 app.get("/health", (req, res) => {
-  res.status(200).json({ status: "healthy", uptime: process.uptime() }  // <- missing closing parenthesis
+  res.status(200).json({ status: "healthy", uptime: process.uptime() }  // <- missing )
 });
 
 module.exports = app;
